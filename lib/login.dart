@@ -19,11 +19,13 @@ class ProductCreatePageState extends State<ProductCreatePage> {
   String profValue;
   String hobbyValue;
 
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text("Create Profile"),),
-        body: Container(
+
+        body:  Form(child: Container(
           margin: EdgeInsets.all(15.0),
           child: ListView(
             children: <Widget>[
@@ -127,7 +129,7 @@ class ProductCreatePageState extends State<ProductCreatePage> {
                   maxLines: (2)),
             ],
           ),
-        ),
+        ),),
         floatingActionButton: FloatingActionButton(child: Icon(Icons.check_circle),
             onPressed:(){
         Navigator.push(context,MaterialPageRoute(builder: (BuildContext context) => MickeyMouse(nameValue,surnameValue,emailValue,phoneValue,
